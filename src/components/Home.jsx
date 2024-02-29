@@ -16,8 +16,8 @@ const Home = () => {
           <Animation />
         </h2>
         <p className="text-[#8892b0] py-4 max-w-[700px] text-justify">
-          I'm a 3rd year student of the HCMC University of Technology and
-          Education. I'm focused on building responsive full-stack web
+          I'm a final year student of the HCMC University of Technology and
+          Education. I'm focused on planning, developing and deploying
           applications. I hope to find an opportunity to work in a creative and
           dynamic environment
         </p>

@@ -20,10 +20,7 @@ const About = () => {
           </div>
           <div>
             <p>
-              I want to use my knowledge, skills and experience in programming
-              to create lots of software with outstanding features to improve
-              the company's reputation and attract many customers. In the next
-              year, I want to become a fullstack developer in the company
+            With experience in the field of Software Engineering, focusing on Backend and DevOps. I has been involved in various cloud server related products and undertaken roles within a software team. I have acquired skills in designing, developing and deploying applications. My ability to multitask and work in a team eviroment are among my strengths.  In the future, I want to become a Devops Engineering in the company.
             </p>
           </div>
         </div>

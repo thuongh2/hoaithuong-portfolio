@@ -23,28 +23,24 @@ const Skills = () => {
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-center py-8">
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
-            <img className="w-20 mx-auto my-4" src={HTML} alt="HTML icon" />
-            <p className="my-4 font-medium">HTML</p>
+            <img className="w-50 mx-auto my-4 h-50 " src="https://s3-hcm-r1.longvan.net/logo/docker.png" alt="HTML icon" />
+            <p className="my-4 font-medium uppercase">Docker</p>
           </div>
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
-            <img className="w-20 mx-auto my-4" src={CSS} alt="HTML icon" />
-            <p className="my-4 font-medium">CSS</p>
+            <img className="w-20 mx-auto my-4 " src="https://s3-hcm-r1.longvan.net/logo/jenkins.png" alt="HTML icon" />
+            <p className="my-4 font-medium uppercase">Jenkins</p>
           </div>
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
             <img
-              className="w-20 mx-auto my-4"
-              src={JavaScript}
-              alt="HTML icon"
+              className="w-50 mx-auto my-4 h-50"
+              src="https://s3-hcm-r1.longvan.net/logo/k8s.png"
+              alt="K8S"
             />
-            <p className="my-4 font-medium">JAVASCRIPT</p>
+            <p className="my-4 font-medium uppercase">K8s</p>
           </div>
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
-            <img className="w-20 mx-auto my-4" src={ReactImg} alt="HTML icon" />
-            <p className="my-4 font-medium">REACT</p>
-          </div>
-          <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
-            <img className="w-20 mx-auto my-4" src={Tailwind} alt="HTML icon" />
-            <p className="my-4 font-medium">TAILWIND</p>
+            <img className="w-25 mx-auto my-4 h-30" src="https://s3-hcm-r1.longvan.net/logo/AWS.jpeg" alt="HTML icon" />
+            <p className="my-4 font-medium">AWS</p>
           </div>
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
             <img className="w-20 mx-auto my-4" src={GitHub} alt="HTML icon" />
