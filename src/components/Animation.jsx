@@ -5,16 +5,6 @@ export default Animation = () => {
   const [pageURL, setPageURL] = useState("dev");
   const [type, setType] = useState("Devops");
 
-  useEffect(() => {
-    setPageURL(window.location.href);
-    console.log(pageURL);
-    if(window.location.href.includes("devops")) {
-      setType("DevOps");
-      console.log(type);
-    }
-
-  }, [setPageURL])
-
 
   return (
     <TypeAnimation
