@@ -3,15 +3,17 @@ import React, { useState, useEffect } from "react";
 
 export default Animation = () => {
   const [pageURL, setPageURL] = useState("dev");
-  const [type, setType] = useState("Software");
+  const [type, setType] = useState("Devops");
 
   useEffect(() => {
     setPageURL(window.location.href);
-  })
-  console.log(pageURL);
-  if(pageURL.includes("devops")) {
-    setType("DevOps");
-  }
+    console.log(pageURL);
+    if(window.location.href.includes("devops")) {
+      setType("DevOps");
+      console.log(type);
+    }
+
+  }, [setPageURL])
 
 
   return (
