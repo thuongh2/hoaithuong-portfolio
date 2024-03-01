@@ -1,0 +1,10 @@
+services:
+  app:
+    image: registry.gitlab.com/thuongh2/hoaithuong-portfolio:latest
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "5000:8080"
+    restart: unless-stopped
+    environment:
+      - CHOKIDAR_USEPOLLING=true 
