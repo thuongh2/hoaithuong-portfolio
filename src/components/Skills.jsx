@@ -23,12 +23,24 @@ const Skills = () => {
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-4 gap-6 text-center py-8">
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
+            <img className="w-50 mx-auto my-4 h-50 " src="/golang.png" alt="HTML icon" />
+            <p className="my-4 font-medium uppercase">Golang</p>
+          </div>
+          <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
+            <img
+              className="w-20 mx-auto my-4"
+              src={Springboot}
+              alt="HTML icon"
+            />
+            <p className="my-4 font-medium">SPRING BOOT</p>
+          </div>
+          <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
             <img className="w-50 mx-auto my-4 h-50 " src="https://s3-hcm-r1.longvan.net/logo/docker.png" alt="HTML icon" />
             <p className="my-4 font-medium uppercase">Docker</p>
           </div>
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
-            <img className="w-20 mx-auto my-4 " src="https://s3-hcm-r1.longvan.net/logo/jenkins.png" alt="HTML icon" />
-            <p className="my-4 font-medium uppercase">Jenkins</p>
+            <img className="w-20 mx-auto my-4 " src="/cicd.png" alt="HTML icon" />
+            <p className="my-4 font-medium uppercase">CI/CD</p>
           </div>
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
             <img
@@ -46,14 +58,7 @@ const Skills = () => {
             <img className="w-20 mx-auto my-4" src={GitHub} alt="HTML icon" />
             <p className="my-4 font-medium">GITHUB</p>
           </div>
-          <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
-            <img
-              className="w-20 mx-auto my-4"
-              src={Springboot}
-              alt="HTML icon"
-            />
-            <p className="my-4 font-medium">SPRING BOOT</p>
-          </div>
+        
           <div className="shadow-sm shadow-[#040c16] hover:scale-110 duration-500 rounded-md">
             <img className="w-20 mx-auto my-4" src={Python} alt="HTML icon" />
             <p className="my-4 font-medium">PYTHON</p>

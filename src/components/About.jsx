@@ -20,7 +20,7 @@ const About = () => {
           </div>
           <div>
             <p>
-            With experience in the field of Software Engineering, focusing on Backend and DevOps. I has been involved in various cloud server related products and undertaken roles within a software team. I have acquired skills in designing, developing and deploying applications. My ability to multitask and work in a team eviroment are among my strengths.  In the future, I want to become a Devops Engineering in the company.
+            Backend engineer with 3 years of Golang experience, focused on building scalable and maintainable systems. Experienced in backend and DevOps for user management and infrastructure. Looking to grow into a senior role by contributing to effective, user-friendly features that create real product value.
             </p>
           </div>
         </div>

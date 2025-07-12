@@ -35,13 +35,13 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="skills" smooth={true} duration={500}>
-            Skills
+          <Link to="experience" smooth={true} duration={500}>
+            Experience
           </Link>
         </li>
         <li>
           <Link to="work" smooth={true} duration={500}>
-            Work
+            Projects
           </Link>
         </li>
         <li>
@@ -97,6 +97,7 @@ const Navbar = () => {
 
       {/* Social icons */}
       <div className="flex fixed flex-col top-[35%] left-0">
+        <svg viewBox="0 0 800 800"><g stroke-width="24" stroke="hsl(227, 71%, 57%)" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="matrix(0.10452846326765346,0.9945218953682733,-0.9945218953682733,0.10452846326765346,853.997372840248,-30.62014345437069)"><path d="M242.5 242.5Q442.5 342.5 400 400Q286.5 525.5 557.5 557.5 " marker-end="url(#SvgjsMarker1484)"></path></g><defs><marker markerWidth="4" markerHeight="4" refX="2" refY="2" viewBox="0 0 4 4" orient="auto" id="SvgjsMarker1484"><polygon points="0,4 1.3333333333333333,2 0,0 4,2" fill="hsl(227, 71%, 57%)"></polygon></marker></defs></svg>
         <ul>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a
@@ -115,6 +116,15 @@ const Navbar = () => {
               Github <FaGithub size={30} />
             </a>
           </li>
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
+            <a
+              className="flex justify-between items-center w-full text-gray-300"
+              href="https://drive.google.com/file/d/1k7fk0yExVC-8fDyTBiCE3j7SwBB3kpoB/view?usp=drive_link"
+              target="blank"
+            >
+              Resume <BsFillPersonLinesFill size={30} />
+            </a>
+          </li>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#6fc2b0]">
             <a
               className="flex justify-between items-center w-full text-gray-300"
@@ -123,15 +133,7 @@ const Navbar = () => {
               Email <HiOutlineMail size={30} />
             </a>
           </li>
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f69]">
-            <a
-              className="flex justify-between items-center w-full text-gray-300"
-              href="https://drive.google.com/file/d/1oeIzL4PWY9HhAOx7I6OyLVv0bP2LXzqE/view?usp=drive_link"
-              target="blank"
-            >
-              Resume <BsFillPersonLinesFill size={30} />
-            </a>
-          </li>
+          
         </ul>
       </div>
     </div>
