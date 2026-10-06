@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/thuongh2/hoaithuong-portfolio
-  tag: sha-19d950d
+  tag: sha-36b596c
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
