@@ -1,4 +1,4 @@
-name: Build and deploy portfolio
+name: Build portfolio image
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   packages: write
 
 concurrency:
@@ -36,6 +36,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      # main-<sha>-<unix ts>: sortable by time. Flux image automation in
+      # k3s-gitops picks the newest one and deploys it.
+      - name: Compute release tag
+        id: release
+        run: echo "tag=main-${GITHUB_SHA::7}-$(date +%s)" >> "$GITHUB_OUTPUT"
+
       - name: Generate image tags
         id: meta
         uses: docker/metadata-action@v5
@@ -43,6 +49,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
+            type=raw,value=${{ steps.release.outputs.tag }},enable={{is_default_branch}}
             type=sha,prefix=sha-,format=short
 
       - name: Build and push image
@@ -56,25 +63,3 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  update-flux-image:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out source
-        uses: actions/checkout@v4
-        with:
-          ref: main
-
-      - name: Update Helm image tag
-        run: |
-          short_tag="sha-${GITHUB_SHA::7}"
-          sed -i "s/^  tag: .*/  tag: ${short_tag}/" deploy/helm/portfolio/values.yaml
-          if git diff --quiet -- deploy/helm/portfolio/values.yaml; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add deploy/helm/portfolio/values.yaml
-          git commit -m "chore(deploy): update image to ${short_tag}"
-          git push
