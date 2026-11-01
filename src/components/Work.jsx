@@ -4,130 +4,62 @@ import svDental from "../assets/project-sv.png";
 import instagram from "../assets/project-ins.png";
 import Windown from "../assets/project-win.png";
 
+const projects = [
+  {
+    name: "SV Dental website",
+    image: svDental,
+    demo: "https://nhakhoasv.vn",
+    code: "https://github.com/TADB0902/sv-dental",
+  },
+  {
+    name: "Shoes Store",
+    image: shoesStore,
+    demo: "https://shoes-store-udtt.vercel.app/",
+    code: "https://github.com/thuongh2/Shoe-Store-Website",
+  },
+  {
+    name: "Instagram React clone",
+    image: instagram,
+    demo: "https://thuongh2.github.io/instagram-react/",
+    code: "https://github.com/thuongh2/instagram-react",
+  },
+  {
+    name: "Shoes Store Windows app",
+    image: Windown,
+    code: "https://github.com/thuongh2/QuanLyBanGiay_Entity",
+  },
+];
+
 const Work = () => {
   return (
-    <div
-      name="work"
-      className="w-full md:h-fit pb-5 text-gray-300"
-    >
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-fit">
-        <div className="pt-5">
-          <p className="text-4xl font-bold inline border-b-4 text-black border-pink-600">
-            Projects
-          </p>
-          <p className="py-6 text-black ">Check out some of my recent work</p>
+    <section name="work" id="work" className="section work">
+      <div className="container">
+        <div className="work__head">
+          <h2>Projects</h2>
+          <p className="lead">Earlier web and desktop builds, each with its source.</p>
         </div>
-
-        {/* Container */}
-        <div className="grid sm:grid-cols-2 gap-6">
-            <div
-            style={{ backgroundImage: `url(${svDental})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                SV Detal Website
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://nhakhoasv.vn"
-                  target="blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
+        <ul className="projects">
+          {projects.map((p) => (
+            <li className="project" key={p.name}>
+              <figure className="project__shot">
+                <img src={p.image} alt={`Screenshot of ${p.name}`} />
+              </figure>
+              <h3>{p.name}</h3>
+              <p className="project__links">
+                {p.demo && (
+                  <a href={p.demo} target="_blank" rel="noreferrer">
+                    Live site
+                  </a>
+                )}
+                <a href={p.code} target="_blank" rel="noreferrer">
+                  Source on GitHub
                 </a>
-                <a href="https://github.com/TADB0902/sv-dental" target="blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${shoesStore})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100 text-center">
-              <span className="text-2xl font-bold text-white tracking-wider  ">
-                Shoes Strore
-              </span>
-              <div className="pt-8 text-center">
-                <a href="https://shoes-store-udtt.vercel.app/" target="blank">
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/thuongh2/Shoe-Store-Website"
-                  target="blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-        
-          {/* Grid Item */}
-          <div
-            style={{ backgroundImage: `url(${instagram})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Instagram React Clone
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://thuongh2.github.io/instagram-react/"
-                  target="blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-                <a
-                  href="https://github.com/thuongh2/instagram-react"
-                  target="blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div
-            style={{ backgroundImage: `url(${Windown})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* Hover Effects */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Shoes Store Windown App
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://github.com/thuongh2/QuanLyBanGiay_Entity"
-                  target="blank"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

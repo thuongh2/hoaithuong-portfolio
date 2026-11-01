@@ -1,135 +1,162 @@
-import React from "react";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "react-scroll";
+import React, { useEffect, useRef } from "react";
 import Animation from "./Animation";
 
-const Home = () => {
-  return (
-    <div name="home" className="w-full h-screen grid">
-      {/* Animated Wave Background */}
-      <div className="absolute inset-0">
-        <svg
-          className="absolute top-0 left-0 w-full h-full"
-          viewBox="0 0 1200 800"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.08)" />
-              <stop offset="50%" stopColor="rgba(255, 255, 255, 0.04)" />
-              <stop offset="100%" stopColor="rgba(255, 255, 255, 0.02)" />
-            </linearGradient>
-            <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.06)" />
-              <stop offset="50%" stopColor="rgba(255, 255, 255, 0.03)" />
-              <stop offset="100%" stopColor="rgba(0, 0, 0, 0.01)" />
-            </linearGradient>
-            <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(0, 0, 0, 0.04)" />
-              <stop offset="50%" stopColor="rgba(0, 0, 0, 0.02)" />
-              <stop offset="100%" stopColor="rgba(0, 0, 0, 0.01)" />
-            </linearGradient>
-            <linearGradient id="wave4" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(0, 0, 0, 0.03)" />
-              <stop offset="50%" stopColor="rgba(0, 0, 0, 0.015)" />
-              <stop offset="100%" stopColor="rgba(255, 255, 255, 255.008)" />
-            </linearGradient>
-          </defs>
-          
-          {/* Wave 1 - Top flowing wave */}
-          <path
-            d="M0,300 C400,200 800,400 1200,300 L1200,0 L0,0 Z"
-            fill="url(#wave1)"
-            style={{ filter: 'blur(1px)' }}
-          >
-            <animate
-              attributeName="d"
-              values="M0,300 C400,200 800,400 1200,300 L1200,0 L0,0 Z;
-                      M0,350 C400,250 800,450 1200,350 L1200,0 L0,0 Z;
-                      M0,280 C400,180 800,380 1200,280 L1200,0 L0,0 Z;
-                      M0,300 C400,200 800,400 1200,300 L1200,0 L0,0 Z"
-              dur="15s"
-              repeatCount="indefinite"
-            />
-          </path>
-          
-          {/* Wave 2 - Middle intersecting wave */}
-          <path
-            d="M0,450 C300,350 600,550 1200,450 L1200,0 L0,0 Z"
-            fill="url(#wave2)"
-            style={{ filter: 'blur(0.5px)' }}
-          >
-            <animate
-              attributeName="d"
-              values="M0,450 C300,350 600,550 1200,450 L1200,0 L0,0 Z;
-                      M0,500 C300,400 600,600 1200,500 L1200,0 L0,0 Z;
-                      M0,420 C300,320 600,520 1200,420 L1200,0 L0,0 Z;
-                      M0,450 C300,350 600,550 1200,450 L1200,0 L0,0 Z"
-              dur="12s"
-              repeatCount="indefinite"
-            />
-          </path>
-          
-          {/* Wave 3 - Bottom flowing wave (reverse) */}
-          <path
-            d="M1200,500 C800,400 400,600 0,500 L0,800 L1200,800 Z"
-            fill="url(#wave3)"
-            style={{ filter: 'blur(1px)' }}
-          >
-            <animate
-              attributeName="d"
-              values="M1200,500 C800,400 400,600 0,500 L0,800 L1200,800 Z;
-                      M1200,450 C800,350 400,550 0,450 L0,800 L1200,800 Z;
-                      M1200,520 C800,420 400,620 0,520 L0,800 L1200,800 Z;
-                      M1200,500 C800,400 400,600 0,500 L0,800 L1200,800 Z"
-              dur="18s"
-              repeatCount="indefinite"
-            />
-          </path>
-          
-          {/* Wave 4 - Intersecting bottom wave */}
-          <path
-            d="M1200,350 C900,250 600,450 0,350 L0,800 L1200,800 Z"
-            fill="url(#wave4)"
-            style={{ filter: 'blur(0.5px)' }}
-          >
-            <animate
-              attributeName="d"
-              values="M1200,350 C900,250 600,450 0,350 L0,800 L1200,800 Z;
-                      M1200,380 C900,280 600,480 0,380 L0,800 L1200,800 Z;
-                      M1200,320 C900,220 600,420 0,320 L0,800 L1200,800 Z;
-                      M1200,350 C900,250 600,450 0,350 L0,800 L1200,800 Z"
-              dur="14s"
-              repeatCount="indefinite"
-            />
-          </path>
-        </svg>
-      </div>
+const RESUME =
+  "https://drive.google.com/file/d/1k7fk0yExVC-8fDyTBiCE3j7SwBB3kpoB/view?usp=drive_link";
 
-      {/* Container */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-8 flex flex-col justify-center h-full">
-        <p className="text-pink-600">Hi, my name is</p>
-        <h1 className="text-4xl sm:text-7xl font-bold text-[#101116]">
-          Vo Hoai Thuong
-        </h1>
-        <h2 className="text-2xl sm:text-6xl font-bold text-[#1d48c7]">
-          <Animation />
-        </h2>
-        <p className="text-[#000000] py-4 max-w-[700px] text-justify">
-          Backend engineer with 3 years of Golang experience, focused on building scalable and maintainable systems. Experienced in backend and DevOps for user management and infrastructure. Looking to grow into a senior role by contributing to effective, user-friendly features that create real product value.
+// Sign-in traffic as a character field: noisy requests arrive on the left,
+// converge on one service line, and leave as clean, resolved rows.
+const RAMP = " .:-=+*#%@";
+
+function useTrafficField(ref) {
+  useEffect(() => {
+    const canvas = ref.current;
+    if (!canvas) return undefined;
+    const ctx = canvas.getContext("2d");
+    const css = getComputedStyle(document.documentElement);
+    const tint = [
+      css.getPropertyValue("--color-glyph-1"),
+      css.getPropertyValue("--color-glyph-2"),
+      css.getPropertyValue("--color-glyph-3"),
+      css.getPropertyValue("--color-glyph-4"),
+      css.getPropertyValue("--color-accent-deep"),
+    ].map((c) => c.trim());
+    const font = css.getPropertyValue("--font-outlier").trim();
+    const CW = 8;
+    const CH = 16;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let w = 0;
+    let h = 0;
+    let cols = 0;
+    let rows = 0;
+    let raf = 0;
+    let last = 0;
+    let visible = true;
+    const t0 = performance.now();
+
+    const resize = () => {
+      const r = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width;
+      h = r.height;
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols = Math.ceil(w / CW);
+      rows = Math.ceil(h / CH);
+    };
+
+    const hash = (x, y) => {
+      const s = Math.sin(x * 127.1 + y * 311.7) * 43758.5453;
+      return s - Math.floor(s);
+    };
+
+    const draw = (now) => {
+      const t = (now - t0) / 1000;
+      ctx.clearRect(0, 0, w, h);
+      ctx.font = `12px ${font}`;
+      ctx.textBaseline = "top";
+      const bus = Math.floor(cols * 0.62);
+      const lanes = Math.max(5, Math.floor(rows / 6));
+      for (let y = 0; y < rows; y += 1) {
+        const ny = y / rows;
+        for (let x = 0; x < cols; x += 1) {
+          const nx = x / cols;
+          // keep the lower band calm: the name and its line sit there
+          const calm = Math.max(
+            Math.min(1, Math.max(0, (0.58 - ny) / 0.16)),
+            Math.min(1, Math.max(0, (nx - 0.82) / 0.1)) * 0.7
+          );
+          if (calm <= 0) continue;
+          let v = 0;
+          if (x < bus) {
+            // raw side: lanes bend toward the bus, with jitter
+            const k = x / bus;
+            for (let i = 0; i < lanes; i += 1) {
+              const start = (i + 0.5) / lanes;
+              const end = 0.12 + (i / lanes) * 0.76;
+              const ly = start + (end - start) * k * k + Math.sin(t * 0.6 + i * 1.7 + k * 5) * 0.02 * (1 - k);
+              const d = Math.abs(ny - ly) * rows;
+              if (d < 2.4) {
+                const packet = (Math.sin(x * 0.18 - t * 3.2 + i * 2.3) + 1) / 2;
+                v = Math.max(v, (1 - d / 2.4) * (0.35 + 0.65 * packet * k));
+              }
+            }
+            v *= 0.55 + 0.45 * hash(x, y + Math.floor(t * 4));
+          } else if (x === bus) {
+            v = 0.62;
+          } else {
+            // resolved side: clean rows that pulse when a packet passes
+            const lane = Math.round(ny * lanes * 1.6);
+            const ly = lane / (lanes * 1.6);
+            const d = Math.abs(ny - ly) * rows;
+            if (d < 0.5) {
+              const run = (Math.sin((x - bus) * 0.12 - t * 2.4 + lane) + 1) / 2;
+              v = 0.28 + 0.6 * run * run;
+            }
+          }
+          v *= calm * 0.85;
+          if (v < 0.08) continue;
+          const ci = Math.min(RAMP.length - 1, Math.floor(v * RAMP.length));
+          const ti = Math.min(tint.length - 1, Math.floor(v * tint.length));
+          ctx.fillStyle = tint[ti];
+          ctx.fillText(RAMP[ci], x * CW, y * CH);
+        }
+      }
+    };
+
+    const loop = (now) => {
+      raf = requestAnimationFrame(loop);
+      if (!visible || now - last < 33) return;
+      last = now;
+      draw(now);
+    };
+
+    canvas.style.backgroundImage = "none";
+    resize();
+    draw(performance.now());
+    const ro = new ResizeObserver(() => {
+      resize();
+      draw(performance.now());
+    });
+    ro.observe(canvas);
+    const io = new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+    });
+    io.observe(canvas);
+    if (!reduce) raf = requestAnimationFrame(loop);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      io.disconnect();
+    };
+  }, [ref]);
+}
+
+const Home = () => {
+  const field = useRef(null);
+  useTrafficField(field);
+
+  return (
+    <section name="home" id="home" className="hero">
+      <canvas ref={field} className="hero__field" aria-hidden="true" />
+      <div className="container hero__inner">
+        <h1 className="hero__name">Vo Hoai Thuong</h1>
+        <p className="lead hero__line">
+          <Animation /> at VNGGames, building account services for 40M+ users.
         </p>
-        <div>
-          <Link to="skills" smooth={true} duration={500}>
-            <button className="text-blue group border-2 px-6 py-3 my-2 flex items-center hover:bg-cyan-600 hover:border-cyan-600 hover:text-white">
-              View Work
-              <span className="group-hover:rotate-90 duration-300">
-                <HiArrowNarrowRight className="ml-3 " />
-              </span>
-            </button>
-          </Link>
+        <div className="hero__actions">
+          <a className="key key--primary" href={RESUME} target="_blank" rel="noreferrer">
+            View résumé
+          </a>
+          <a className="key" href="mailto:hoaithuong.data@gmail.com">
+            Email me
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
